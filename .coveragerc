@@ -1,0 +1,4 @@
+[run]
+include = classiplex/*
+omit = *migrations*, *tests*
+branch = True

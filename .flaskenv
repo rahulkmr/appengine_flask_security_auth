@@ -1,0 +1,3 @@
+FLASK_APP=classiplex
+FLASK_ENV=development
+FLASK_DEBUG=true
