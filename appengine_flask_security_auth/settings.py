@@ -23,21 +23,25 @@ SQLALCHEMY_TRACK_MODIFICATIONS = env.bool('FLASK_DEBUG', False)
 # flask-security configs
 SECURITY_URL_PREFIX = env.str('SECURITY_URL_PREFIX', '/account')
 SECURITY_CONFIRMABLE = env.bool('SECURITY_CONFIRMABLE', True)
-SECURITY_REGISTRABLE = env.bool('SECURITY_REGISTRABLE', True)
+SECURITY_REGISTERABLE = env.bool('SECURITY_REGISTERABLE', True)
 SECURITY_RECOVERABLE = env.bool('SECURITY_RECOVERABLE', True)
 SECURITY_TRACKABLE = env.bool('SECURITY_TRACKABLE', True)
 SECURITY_CHANGEABLE = env.bool('SECURITY_CHANGEABLE', True)
+SECURITY_PASSWORD_SALT = env.str('SECURITY_PASSWORD_SALT')
 
 
 # flask-mail configs
 MAIL_SERVER = env.str('MAIL_SERVER', 'localhost')
 MAIL_PORT = env.int('MAIL_PORT', 25)
-MAIL_USE_SSL = env.bool('MAIL_USE_SSL', True)
+MAIL_USE_TLS = env.bool('MAIL_USE_TLS', True)
 MAIL_USERNAME = env.str('MAIL_USERNAME', '')
 MAIL_PASSWORD = env.str('MAIL_PASSWORD', '')
+MAIL_DEFAULT_SENDER = env.list('MAIL_DEFAULT_SENDER',
+                               ['Rahul Kumar', 'rahul@thoughtnirvana.com'])
 
 # webpack configs
-WEBPACK_MANIFEST_PATH = env.str('WEBPACK_MANIFEST_PATH', './static/build/manifest.json')
+WEBPACK_MANIFEST_PATH = env.str('WEBPACK_MANIFEST_PATH',
+                                './static/build/manifest.json')
 WEBPACK_ASSETS_BASE_URL = env.str('WEBPACK_ASSETS_BASE_URL', None)
 
 APISPEC_TITLE = env.str('APISPEC_TITLE', 'classiplex')

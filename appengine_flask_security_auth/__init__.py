@@ -18,8 +18,8 @@ from flask_marshmallow import Marshmallow
 from flask_apispec import FlaskApiSpec
 
 from werkzeug.middleware.proxy_fix import ProxyFix
-
 from whitenoise import WhiteNoise
+from google.cloud import datastore
 
 from . import settings
 from .middlewares import (
@@ -32,6 +32,7 @@ from . import commands
 
 
 db = SQLAlchemy()
+ds_client = None
 cache = Cache()
 user_datastore = None
 security = None
@@ -44,6 +45,10 @@ api_spec = FlaskApiSpec()
 def create_app(config_object=settings):
     app = Flask(__name__)
     app.config.from_object(config_object)
+
+    global ds_client
+    ds_client = datastore.Client()
+
     register_extensions(app)
     register_middlewares(app)
     register_commands(app)
@@ -88,19 +93,14 @@ def register_middlewares(app):
 def init_security(app):
     from . import models
     global user_datastore, security
-    user_datastore = SQLAlchemyUserDatastore(db,
-                                             models.User,
-                                             models.Role)
+    user_datastore = models.AppEngineUserDatastore(models.User,
+                                                   models.Role)
     security = Security(app, user_datastore)
 
 
 def register_blueprints(app):
     import classiplex.core.views as core_views
     app.register_blueprint(core_views.blueprint, url_prefix='/')
-
-    import classiplex.todo.views as todo_views
-    app.register_blueprint(todo_views.blueprint, url_prefix='/api/v1/')
-    todo_views.register_endpoints_with_swagger()
 
 
 def register_commands(app):

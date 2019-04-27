@@ -1,0 +1,12 @@
+runtime: python37
+entrypoint: gunicorn -b :$PORT 'appengine_flask_security_auth:create_app()'
+
+env_variables:
+    FLASK_ENV: production
+
+handlers:
+    - url: /static/build
+      static_dir: appengine_flask_security_auth/static/build
+
+    - url: /.*
+      script: auto

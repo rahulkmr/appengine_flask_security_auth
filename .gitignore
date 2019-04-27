@@ -90,3 +90,5 @@ celerybeat-schedule
 .vscode/
 
 node_modules/
+
+classiplex.json
