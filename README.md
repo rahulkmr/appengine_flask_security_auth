@@ -1,7 +1,7 @@
-## classiplex
+## appengine_flask_security_auth
 
-[![Build Status](https://travis-ci.org/FILL_UP_your_id/classiplex.svg?branch=master)](https://travis-ci.org/FILL_UP_your_id/classiplex)
-[![codecov](https://codecov.io/gh/FILL_UP_your_id/classiplex/branch/master/graph/badge.svg)](https://codecov.io/gh/FILL_UP_your_id/classiplex)
+[![Build Status](https://travis-ci.org/FILL_UP_your_id/appengine_flask_security_auth.svg?branch=master)](https://travis-ci.org/FILL_UP_your_id/appengine_flask_security_auth)
+[![codecov](https://codecov.io/gh/FILL_UP_your_id/appengine_flask_security_auth/branch/master/graph/badge.svg)](https://codecov.io/gh/FILL_UP_your_id/appengine_flask_security_auth)
 
 
 ### Running the app locally
@@ -18,7 +18,7 @@ pip install -r requirements/local.txt
 
 # Create .env file and modify it for your setup.
 # Most settings have default values.
-# Look in classiplex/settings.py for details.
+# Look in appengine_flask_security_auth/settings.py for details.
 cp .env.example .env
 
 # You will need to create the development and test database manually.

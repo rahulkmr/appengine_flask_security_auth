@@ -1,3 +1,3 @@
-FLASK_APP=classiplex
+FLASK_APP=appengine_flask_security_auth
 FLASK_ENV=development
 FLASK_DEBUG=true

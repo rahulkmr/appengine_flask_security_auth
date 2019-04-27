@@ -83,7 +83,7 @@ def register_middlewares(app):
 
     app.wsgi_app = WhiteNoise(app.wsgi_app)
     static_folders = (
-        'classiplex/static/',
+        'appengine_flask_security_auth/static/',
         # Add blueprint static folders here.
     )
     for static in static_folders:
@@ -99,7 +99,7 @@ def init_security(app):
 
 
 def register_blueprints(app):
-    import classiplex.core.views as core_views
+    import appengine_flask_security_auth.core.views as core_views
     app.register_blueprint(core_views.blueprint, url_prefix='/')
 
 

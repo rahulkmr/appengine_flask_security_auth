@@ -5,16 +5,16 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const WebpackAssetsManifest = require('webpack-manifest-plugin');
 
 
-const assetsPath = path.join(__dirname, 'classiplex', 'assets')
+const assetsPath = path.join(__dirname, 'appengine_flask_security_auth', 'assets')
 
 module.exports = {
     entry: {
-        app_scripts: './classiplex/assets/app.js',
-        app_styles: './classiplex/assets/app.scss',
-        app_images: './classiplex/assets/images.js'
+        app_scripts: './appengine_flask_security_auth/assets/app.js',
+        app_styles: './appengine_flask_security_auth/assets/app.scss',
+        app_images: './appengine_flask_security_auth/assets/images.js'
     },
     output: {
-        path: path.join(__dirname, 'classiplex', 'static', 'build'),
+        path: path.join(__dirname, 'appengine_flask_security_auth', 'static', 'build'),
         publicPath: `/static/build/`,
         filename: '[name].[hash].js',
         chunkFilename: '[name]_[id].[chunkhash].js'

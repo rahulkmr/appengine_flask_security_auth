@@ -16,7 +16,7 @@ CACHE_TYPE = env.str('CACHE_TYPE', 'simple')
 # flask-sqlalchemy configs
 database_url = env.str('SQLALCHEMY_DATABASE_URI', None) or \
     env.str('DATABASE_URL', None) or \
-    'postgresql:///classiplex'
+    'postgresql:///appengine_flask_security_auth'
 SQLALCHEMY_DATABASE_URI = database_url
 SQLALCHEMY_TRACK_MODIFICATIONS = env.bool('FLASK_DEBUG', False)
 
@@ -44,4 +44,4 @@ WEBPACK_MANIFEST_PATH = env.str('WEBPACK_MANIFEST_PATH',
                                 './static/build/manifest.json')
 WEBPACK_ASSETS_BASE_URL = env.str('WEBPACK_ASSETS_BASE_URL', None)
 
-APISPEC_TITLE = env.str('APISPEC_TITLE', 'classiplex')
+APISPEC_TITLE = env.str('APISPEC_TITLE', 'appengine_flask_security_auth')

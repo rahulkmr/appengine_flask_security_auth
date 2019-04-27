@@ -2,8 +2,8 @@ import os
 
 import pytest
 
-from classiplex.tests import settings
-from classiplex import create_app
+from appengine_flask_security_auth.tests import settings
+from appengine_flask_security_auth import create_app
 
 
 @pytest.fixture(scope='session')
@@ -19,7 +19,7 @@ def app():
 
 @pytest.fixture(scope='session')
 def db(app):
-    from classiplex import db as _db
+    from appengine_flask_security_auth import db as _db
 
     with app.app_context():
         _db.create_all()

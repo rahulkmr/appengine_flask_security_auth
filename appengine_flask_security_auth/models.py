@@ -3,7 +3,7 @@ from flask_security.datastore import UserDatastore
 
 from google.cloud import datastore
 
-from classiplex import ds_client
+from appengine_flask_security_auth import ds_client
 
 class UserModelMeta(type):
     def __new__(cls, name, bases, attrs):

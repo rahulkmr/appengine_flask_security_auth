@@ -1,4 +1,4 @@
 [run]
-include = classiplex/*
+include = appengine_flask_security_auth/*
 omit = *migrations*, *tests*
 branch = True
